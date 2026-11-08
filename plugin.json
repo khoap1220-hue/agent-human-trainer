@@ -1,0 +1,11 @@
+{
+  "name": "agent-human-trainer",
+  "author": {
+    "name": "Khoa Phan",
+    "url": "https://github.com/khoap1220-hue/agent-human-trainer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khoap1220-hue/agent-human-trainer.git"
+  }
+}

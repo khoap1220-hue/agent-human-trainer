@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-human-trainer"
+version = "1.0.0"
+description = "Contrastive DPO/SFT Training Suite, 5-Tier Behavioral Scoring Engine (D1..D5), and AST Quality Gate for aligning AI Coding Agents with Senior Human Engineering Standards."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Khoa Phan", email = "233728558+khoap1220-hue@users.noreply.github.com"}
+]
+keywords = [
+    "ai-agents",
+    "dpo-dataset",
+    "sft-dataset",
+    "llm-alignment",
+    "software-engineering",
+    "code-review",
+    "prompt-injection",
+    "ast-verification",
+    "benchmark",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/khoap1220-hue/agent-human-trainer"
+Repository = "https://github.com/khoap1220-hue/agent-human-trainer"
+Issues = "https://github.com/khoap1220-hue/agent-human-trainer/issues"
+
+[project.scripts]
+agent-human-trainer = "agent_human_trainer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_human_trainer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
