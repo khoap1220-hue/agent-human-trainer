@@ -39,7 +39,7 @@ class TestAgentHumanTrainer(unittest.TestCase):
         self.assertEqual(sum(d["max_risk_points"] for d in BEHAVIORAL_SCORING_DIMENSIONS), 100)
         self.assertEqual(len(AGENT_SOPHISTICATION_TIERS), 5)
         self.assertEqual(len(CONTRASTIVE_ALIGNMENT_PAIRS), 19)
-        self.assertEqual(len(ANONYMIZED_EMPIRICAL_SPECIMENS), 32)
+        self.assertEqual(len(ANONYMIZED_EMPIRICAL_SPECIMENS), 33)
 
     def test_inbound_specification_auditor_and_prompt_injection_stripper(self) -> None:
         raw_issue = {
@@ -222,14 +222,14 @@ class TestAgentHumanTrainer(unittest.TestCase):
         dpo = build_dpo_records()
         sft = build_sft_records()
         corpus = build_benchmark_corpus()
-        self.assertEqual(len(dpo), 51)
-        self.assertEqual(len(sft), 51)
-        self.assertEqual(corpus["summary_metrics"]["total_dpo_training_pairs_count"], 51)
+        self.assertEqual(len(dpo), 52)
+        self.assertEqual(len(sft), 52)
+        self.assertEqual(corpus["summary_metrics"]["total_dpo_training_pairs_count"], 52)
 
         pkg_root = Path(__file__).resolve().parent.parent
         exported = export_all_community_datasets(pkg_root / "datasets")
-        self.assertEqual(exported["dpo_records_count"], 51)
-        self.assertEqual(exported["sft_records_count"], 51)
+        self.assertEqual(exported["dpo_records_count"], 52)
+        self.assertEqual(exported["sft_records_count"], 52)
 
         bench = run_benchmark_suite()
         self.assertEqual(bench["benchmark_status"], "PASS")
